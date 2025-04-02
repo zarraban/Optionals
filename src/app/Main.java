@@ -28,7 +28,7 @@ public class Main {
         );
 
         Optional<List<User>> listOptional = userRepository.findAllUsers();
-        listOptional.ifPresentOrElse(System.out::println,
+        listOptional.ifPresentOrElse(user-> System.out.println(user.size()),
                 () -> System.out.println("Couldn't find"));
 
 
@@ -48,7 +48,7 @@ public class Main {
         );
 
         Optional<List<User>> listOptional1 = userRepository1.findAllUsers();
-        listOptional1.ifPresentOrElse(List::size,
+        listOptional1.ifPresentOrElse(user-> System.out.println(user.size()),
                 () -> System.out.println("Couldn't find"));
     }
 

@@ -17,20 +17,19 @@ public class Main {
         Optional<User> findById = userRepository.findUserById(3);
         findById.ifPresentOrElse(
                 System.out::println,
-                ()-> System.out.println("Couldn't find")
+                () -> System.out.println("Couldn't find")
         );
-
 
 
         Optional<User> findByEmail = userRepository.findUserByEmail("valentin@gmail.com");
         findByEmail.ifPresentOrElse(
                 System.out::println,
-                ()-> System.out.println("Couldn't find")
+                () -> System.out.println("Couldn't find")
         );
 
         Optional<List<User>> listOptional = userRepository.findAllUsers();
         listOptional.ifPresentOrElse(System.out::println,
-                ()-> System.out.println("Couldn't find"));
+                () -> System.out.println("Couldn't find"));
 
 
         UserRepository userRepository1 = new UserRepository();
@@ -38,20 +37,19 @@ public class Main {
         Optional<User> findById1 = userRepository1.findUserById(4);
         findById1.ifPresentOrElse(
                 System.out::println,
-                ()-> System.out.println("Couldn't find")
+                () -> System.out.println("Couldn't find")
         );
-
 
 
         Optional<User> findByEmail1 = userRepository1.findUserByEmail("valentin@gmail.com");
         findByEmail1.ifPresentOrElse(
                 System.out::println,
-                ()-> System.out.println("Couldn't find")
+                () -> System.out.println("Couldn't find")
         );
 
         Optional<List<User>> listOptional1 = userRepository1.findAllUsers();
         listOptional1.ifPresentOrElse(List::size,
-                ()-> System.out.println("Couldn't find"));
+                () -> System.out.println("Couldn't find"));
     }
 
 }
